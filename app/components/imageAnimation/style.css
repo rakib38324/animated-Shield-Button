@@ -1,0 +1,29 @@
+svg {
+    width: 500px;
+  }
+  svg .line1 {
+    stroke-dasharray: 340;
+    stroke-dashoffset: 40;
+    animation: dash 1.5s linear alternate infinite;
+  }
+  svg .line2 {
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    animation: dash2 1.5s linear alternate infinite;
+  }
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 360;
+    }
+    to {
+      stroke-dashoffset: 40;
+    }
+  }
+  @keyframes dash2 {
+    from {
+      stroke-dashoffset: 280;
+    }
+    to {
+      stroke-dashoffset: -40;
+    }
+  }
