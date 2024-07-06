@@ -1,29 +1,38 @@
-svg {
-    width: 500px;
-  }
-  svg .line1 {
-    stroke-dasharray: 340;
-    stroke-dashoffset: 40;
-    animation: dash 1.5s linear alternate infinite;
-  }
-  svg .line2 {
-    stroke-dasharray: 320;
-    stroke-dashoffset: 320;
-    animation: dash2 1.5s linear alternate infinite;
-  }
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 360;
+@keyframes glowing {
+    0% {
+      stroke: rgb(72, 72, 188);
     }
-    to {
-      stroke-dashoffset: 40;
+    50% {
+      stroke: rgb(176, 186, 245);
+    }
+    100% {
+      stroke: rgba(89, 89, 189, 0.582);
     }
   }
-  @keyframes dash2 {
-    from {
-      stroke-dashoffset: 280;
+
+  @keyframes moveAlongPath {
+    0% {
+      stroke-dashoffset: 0;
     }
-    to {
-      stroke-dashoffset: -40;
+    100% {
+      stroke-dashoffset: -1000;
     }
+  }
+
+  .mainPath {
+    stroke-width: 2;
+    fill: none;
+    filter: url(#glow);
+    stroke-dasharray: 500, 1000;
+    animation: moveAlongPath 5s linear infinite;
+  }
+
+  .mainPath1 {
+    stroke: rgb(55, 55, 187);
+    animation: glowing 2s infinite, moveAlongPath 5s linear infinite;
+  }
+
+  .mainPath2 {
+    stroke: rgb(120, 140, 221);
+    animation: glowing 2s infinite, moveAlongPath 5s linear infinite;
   }
