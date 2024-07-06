@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect } from "react";
-import logo from "@/public/shield_icon.png";
 import { gsap } from "gsap";
 import './style.css'
 
@@ -15,7 +13,7 @@ const ImageAnimation = () => {
       },
       {
         scale: 1.1, // ending scale (slightly bigger)
-        duration: 0.5, // duration of each half of the animation
+        duration: 1, // duration of each half of the animation
         repeat: -1, // repeat indefinitely
         yoyo: true, // reverse back to original scale
         ease: "power1.inOut", // easing function
@@ -68,15 +66,40 @@ const ImageAnimation = () => {
         </g>
 
 
+        <svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feFlood result="flood" flood-color="white" flood-opacity="1" />
+              <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in" />
+              <feMorphology in="mask" result="dilated" operator="dilate" radius="5" />
+              <feGaussianBlur in="dilated" result="blurred" stdDeviation="10" />
+              <feMerge>
+                <feMergeNode in="blurred" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <path
+            class="mainPath"
+            d="M204.998 445.219C214.998 452.879 240.497 470.198 273.997 475.694C307.496 471.198 333.696 446.118 336.496 445.718"
+          />
+        </svg>
+
+
+
         {/* main path */}
         <path
           className="mainPath"
           d="M392.21 185.365L392.816 185.597L392.83 185.583C410.413 192.59 422.178 209.914 422.178 228.872V277.989C422.178 363.649 368.254 441.42 287.976 471.496L287.975 471.496C282.645 473.497 277.045 474.498 271.496 474.498C265.947 474.498 260.398 473.514 255.122 471.531L255.121 471.53C174.773 441.42 120.85 363.666 120.85 278.007V228.889C120.85 209.733 132.883 192.231 150.8 185.365L254.798 145.513C265.574 141.393 277.436 141.393 288.212 145.513L392.21 185.365Z"
           stroke="white"
-          stroke-opacity="0.26"
+          stroke-opacity="1"
           stroke-width="2"
+
         />
-        <svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+
+
+        {/* <svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="glow">
               <feGaussianBlur stdDeviation="4.5" result="coloredBlur" />
@@ -93,20 +116,22 @@ const ImageAnimation = () => {
           />
           <path
             class="mainPath mainPath2"
+            stroke="url(#paint1_linear_579_14)"
+            stroke-width="5"
             d="M392.21 185.365L392.816 185.597L392.83 185.583C410.413 192.59 422.178 209.914 422.178 228.872V277.989C422.178 363.649 368.254 441.42 287.976 471.496L287.975 471.496C282.645 473.497 277.045 474.498 271.496 474.498C265.947 474.498 260.398 473.514 255.122 471.531L255.121 471.53C174.773 441.42 120.85 363.666 120.85 278.007V228.889C120.85 209.733 132.883 192.231 150.8 185.365L254.798 145.513C265.574 141.393 277.436 141.393 288.212 145.513L392.21 185.365Z"
           />
-        </svg>
+        </svg> */}
 
         {/* <path
-        class="line2"
+          class="line2"
           className="path1"
-          d="M204.998 445.219C214.998 452.879 240.497 470.198 273.997 475.694C307.496 471.198 333.696 446.118 336.496 445.718"
+          d="M204.998 445.219C214.998 452.879 240.497 470.198 273.997 475.694C307.496 471.198 333.696   446.118    336.496 445.718"
           stroke="url(#paint1_linear_579_14)"
           stroke-width="5"
         />
-      
+
         <path
-        class="line1"
+          class="line1"
           className="path2"
           d="M181.498 173.94L257.497 145.262C259.997 144.263 271.497 141.265 280.996 144.263"
           stroke="url(#paint2_linear_579_14)"

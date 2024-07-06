@@ -1,14 +1,4 @@
-@keyframes glowing {
-    0% {
-      stroke: rgb(72, 72, 188);
-    }
-    50% {
-      stroke: rgb(176, 186, 245);
-    }
-    100% {
-      stroke: rgba(89, 89, 189, 0.582);
-    }
-  }
+
 
   @keyframes moveAlongPath {
     0% {
@@ -20,19 +10,17 @@
   }
 
   .mainPath {
-    stroke-width: 2;
+    stroke-width: 1.5;
     fill: none;
     filter: url(#glow);
-    stroke-dasharray: 500, 1000;
-    animation: moveAlongPath 5s linear infinite;
+    stroke-dasharray: 80, 500;
+    animation: moveAlongPath 8s linear infinite;
   }
 
-  .mainPath1 {
-    stroke: rgb(55, 55, 187);
-    animation: glowing 2s infinite, moveAlongPath 5s linear infinite;
-  }
-
-  .mainPath2 {
-    stroke: rgb(120, 140, 221);
-    animation: glowing 2s infinite, moveAlongPath 5s linear infinite;
+  .mainPath {
+    stroke-width: 0.5;
+    fill: none;
+    /* filter: url(#glow); */
+    stroke-dasharray: 80, 500;
+    animation:  moveAlongPath 8s linear infinite;
   }
