@@ -3,8 +3,9 @@
     transform: translate(0%, -50%);
     text-decoration: none;
     background: #010a1a;
-    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 20px 50px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    border: #0e0040 solid 0.5px;
   }
 
   .button span {
@@ -25,10 +26,10 @@
   
   @keyframes animate1 {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(-200%);
     }
     100% {
-      transform: translateX(100%);
+      transform: translateX(200%);
     }
   }
   
@@ -40,15 +41,15 @@
     right: 0;
     background: linear-gradient(to bottom, #0c002b, #1779ff);
     animation: animate2 8s linear infinite;
-    animation-delay: 4s;
+    animation-delay: 2s;
   }
   
   @keyframes animate2 {
     0% {
-      transform: translateY(-100%);
+      transform: translateY(-200%);
     }
     100% {
-      transform: translateY(100%);
+      transform: translateY(200%);
     }
   }
   
@@ -59,14 +60,15 @@
     width: 100%;
     background: linear-gradient(to left, #0c002b, #1779ff);
     animation: animate3 8s linear infinite;
+    animation-delay: 4s;
   }
   
   @keyframes animate3 {
     0% {
-      transform: translateX(100%);
+      transform: translateX(200%);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-200%);
     }
   }
   
@@ -77,14 +79,14 @@
     left: 0;
     background: linear-gradient(to top, #0c002b, #1779ff);
     animation: animate4 8s linear infinite;
-    animation-delay: 4s;
+    animation-delay: 6s;
   }
   
   @keyframes animate4 {
     0% {
-      transform: translateY(100%);
+      transform: translateY(200%);
     }
     100% {
-      transform: translateY(-100%);
+      transform: translateY(-200%);
     }
   }
