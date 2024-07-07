@@ -48,23 +48,7 @@ const ImageAnimation = () => {
             class="mainPath"
             d="M204.998 445.219C214.998 452.879 240.497 470.198 273.997 475.694C307.496 471.198 333.696 446.118 336.496 445.718"
           />
-        </svg>
 
-
-
-        <svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feFlood result="flood" flood-color="white" flood-opacity="1" />
-              {/* <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in" /> */}
-              <feMorphology in="mask" result="dilated" operator="dilate" radius="1" />
-              <feGaussianBlur in="dilated" result="blurred" stdDeviation="5" />
-              <feMerge>
-                <feMergeNode in="blurred" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
 
           <path
             className="mainPath"
@@ -73,25 +57,22 @@ const ImageAnimation = () => {
             stroke-width="2.5"
             fill="none"
             filter="url(#glow)"
-            stroke-dasharray="140 350"
+            stroke-dasharray="150 350"
           >
             <animate
               attributeName="stroke-dashoffset"
               values="200; -10000"
-              dur="90s"
+              dur="120s"
               repeatCount="indefinite"
             />
           </path>
-
-
         </svg>
 
 
 
 
 
-
-
+        {/* middle AI letter */}
         <path
           d="M293.692 336.771L302.926 354.792H282.727L273.493 336.771L251.417 293.52L229.342 336.771L220.108 354.792H199.908L209.142 336.771L251.417 253.874L293.692 336.771Z"
           fill="white"
