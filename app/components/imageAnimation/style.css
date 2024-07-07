@@ -1,4 +1,4 @@
-
+/* 
 
   @keyframes moveAlongPath {
     0% {
@@ -13,14 +13,16 @@
     stroke-width: 1.5;
     fill: none;
     filter: url(#glow);
-    stroke-dasharray: 80, 500;
-    animation: moveAlongPath 8s linear infinite;
+    stroke-dasharray: 10, 500;
+    animation: moveAlongPath 12s linear infinite;
   }
 
   .mainPath {
-    stroke-width: 0.5;
+    stroke-width: 1.5;
     fill: none;
-    /* filter: url(#glow); */
-    stroke-dasharray: 80, 500;
-    animation:  moveAlongPath 8s linear infinite;
+    filter: url(#glow);
+    stroke-dasharray: 10, 500;
+    animation:  moveAlongPath 12s linear infinite;
   }
+
+   */
